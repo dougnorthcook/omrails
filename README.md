@@ -1,4 +1,4 @@
 # One Month Rails
 
 This is the sample application for 
-[*One Month Rails: Teach Yourself How to Fart*]
+[*One Month Rails: Teach Yourself How to Fart*](http://www.northcook.com)
