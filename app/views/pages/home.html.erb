@@ -1,12 +1,18 @@
-<div class="hero-unit">
-	<h1>Get it!</h1>
-	<p>
-		You found us!
+<% if user_signed_in? %>
+	<h1>You did it you magnificent bastard!!</h1>
+<% else %>
 
-	<%= link_to "One Month Rails", "http//northcook.com" %>
+	<div class="hero-unit">
+		<h1>Get it!</h1>
+		<p>
+			You found us!
 
-	</p>
-	<p>
-<%= link_to "Sign Up Now!", "Signup" , class: "btn btn-inverse btn large" %>
-	</p>
-</div>
+		<%= link_to "One Month Rails", "http//northcook.com" %>
+
+		</p>
+		<p>
+	<%= link_to "Sign Up Now!", new_user_registration_path , class: "btn btn-inverse btn large" %>
+		</p>
+	</div>
+
+<% end %>
