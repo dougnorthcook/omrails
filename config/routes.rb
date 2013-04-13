@@ -1,5 +1,8 @@
 Omrails::Application.routes.draw do
 
+  resources :films
+
+
   devise_for :views
 
   devise_for :users
