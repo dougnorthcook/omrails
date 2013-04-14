@@ -1,20 +1,21 @@
-<h1>Feature Films</h1>
+  <h1>Listing pins</h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>Film</th>
+              <th>Description</th>
+              <th></th>
+              <th></th>
+              <th></th>
+          </tr>
+      </thead>
 
-  <tbody>
-    <%= render @films %>
-  </tbody>
-</table>
+      <tbody>
+          <%= render @films %>
+      </tbody>
+  </table>
 
-<br />
+  <br />
 
-<%= link_to 'New Film', new_film_path %>
+  <%= link_to 'New Film', new_film_path %>
