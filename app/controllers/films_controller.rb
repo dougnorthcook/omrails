@@ -1,4 +1,6 @@
 class FilmsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
+
   # GET /films
   # GET /films.json
   def index
@@ -24,7 +26,7 @@ class FilmsController < ApplicationController
   # GET /films/new
   # GET /films/new.json
   def new
-    @film = Film.new
+    @film = current_user.films.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +36,13 @@ class FilmsController < ApplicationController
 
   # GET /films/1/edit
   def edit
-    @film = Film.find(params[:id])
+    @film = current_user.films.find(params[:id])
   end
 
   # POST /films
   # POST /films.json
   def create
-    @film = Film.new(params[:film])
+    @film = current_user.films.new(params[:film])
 
     respond_to do |format|
       if @film.save
@@ -56,7 +58,7 @@ class FilmsController < ApplicationController
   # PUT /films/1
   # PUT /films/1.json
   def update
-    @film = Film.find(params[:id])
+    @film = current_user.films.find(params[:id])
 
     respond_to do |format|
       if @film.update_attributes(params[:film])
@@ -72,7 +74,7 @@ class FilmsController < ApplicationController
   # DELETE /films/1
   # DELETE /films/1.json
   def destroy
-    @film = Film.find(params[:id])
+    @film = current_user.films.find(params[:id])
     @film.destroy
 
     respond_to do |format|
