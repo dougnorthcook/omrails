@@ -1,9 +1,17 @@
-<tr>
-	<td><%= image_tag film.film (:medium) %></td>
-	<td><%= film.description %></td>
-	<td><%= link_to 'Show', film %></td>
-	<% if current_user == film.user %>
-	<td><%= link_to 'Edit', edit_film_path(film) %></td>
-	<td><%= link_to 'Destroy', film, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<div class="box">
+		<%= link_to (image_tag film.film (:medium)), film %>
+	<p class="description">
+		<%= film.description %>
+	</p>
+		<p>
+			<strong>
+				Posted by <%= film.user.name %>
+			</strong>
+	</p>
+	<p>
+		<% if current_user == film.user %>
+			<%= link_to 'Edit', edit_film_path(film) %>
+			<%= link_to 'Destroy', film, method: :delete, data: { confirm: 'Are you sure?' } %>
+	</p>
 	<% end %>
-</tr>
+</div>
